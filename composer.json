@@ -4,10 +4,10 @@
 	"license": "MIT",
 	"authors": [
 		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" },
-        { "name": "Pears Health Cyber, s.r.o.", "homepage": "http://pearshealthcyber.cz" }
+		{ "name": "Pears Health Cyber, s.r.o.", "homepage": "http://pearshealthcyber.cz" }
 	],
 	"require": {
-        "kdyby/doctrine": "~2.0"
+		"kdyby/doctrine": "~2.0"
 	},
 	"autoload": {
 		"psr-4": {
