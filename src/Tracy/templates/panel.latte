@@ -1,0 +1,35 @@
+<style>
+#nette-debug td.nette-Doctrine2Panel-sql { background: white !important }
+#nette-debug .nette-Doctrine2Panel-source { color: #BBB !important }
+#nette-debug .nette-Doctrine2Panel tr table { margin: 8px 0; max-height: 150px; overflow:auto }
+</style>
+
+
+<div class="nette-inner tracy-inner nette-Doctrine2Panel">
+	<h1>Identical Queries: {$dataCollector->getIdenticalQueriesCount()}</h1>
+	{include queryTable, queries => $dataCollector->getIdenticalQueries()}
+
+	<br>
+
+	<h1>Similar Queries: {$dataCollector->getSimilarQueriesCount()}</h1>
+	{include queryTable, queries => $dataCollector->getSimilarQueries()}
+</div>
+
+
+{define queryTable}
+    <table>
+        <tr>
+            <th>Times called</th>
+            <th>SQL Statement</th>
+        </tr>
+
+		{foreach $queries as $query}
+	        <tr>
+	            <td>{$query->getSisterQueriesCount()}</td>
+	            <td class="nette-Doctrine2Panel-sql">
+	                {$query->getSqlWithParameters()|noescape}
+                </td>
+	        </tr>
+		{/}
+    </table>
+{/}

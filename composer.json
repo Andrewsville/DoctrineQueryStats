@@ -1,0 +1,17 @@
+{
+	"name": "lekarna/doctrine-query-stats",
+	"description": "Easy blame of duplicated queries; port of SensioLabsDoctrineQueryStatisticsBundle to Nette",
+	"license": "MIT",
+	"authors": [
+		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" },
+        { "name": "Pears Health Cyber, s.r.o.", "homepage": "http://pearshealthcyber.cz" }
+	],
+	"require": {
+        "kdyby/doctrine": "~2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Lekarna\\DoctrineQueryStats\\": "src/"
+		}
+	}
+}
