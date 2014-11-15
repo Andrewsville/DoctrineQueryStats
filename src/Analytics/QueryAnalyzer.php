@@ -45,10 +45,8 @@ class QueryAnalyzer extends Nette\Object
 	{
 		if ($this->identicalQueries === NULL) {
 			$groupedQueries = [];
-			if ($this->identicalQueries === NULL) {
-				foreach ($this->queries as $query) {
-					$groupedQueries[$query->getSqlAndParametersHash()][] = $query;
-				}
+			foreach ($this->queries as $query) {
+				$groupedQueries[$query->getSqlAndParametersHash()][] = $query;
 			}
 			$this->identicalQueries = $this->filterIndistinctQueries($groupedQueries);
 		}
