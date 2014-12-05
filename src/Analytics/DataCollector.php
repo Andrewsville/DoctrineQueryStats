@@ -1,16 +1,14 @@
 <?php
 
 /**
- * This file is part of Lekarna
- * Copyright (c) 2014 Pears Health Cyber, s.r.o. (http://pearshealthcyber.cz)
+ * This file is part of Zenify
+ * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Lekarna\DoctrineQueryStats\Analytics;
-
-use Nette;
+namespace Zenify\DoctrineQueryStats\Analytics;
 
 
-class DataCollector extends Nette\Object
+class DataCollector
 {
 
 	/**
@@ -33,17 +31,6 @@ class DataCollector extends Nette\Object
 	{
 		$this->loggerDataExtractor = $loggerDataExtractor;
 		$this->queryAnalyzer = $queryAnalyzer;
-	}
-
-
-	private function sortQueries()
-	{
-		if ($this->areQueriesLoaded === FALSE) {
-			foreach ($this->loggerDataExtractor->getLoggedQueries() as $query) {
-				$this->queryAnalyzer->addQuery($query);
-			}
-			$this->areQueriesLoaded = TRUE;
-		}
 	}
 
 
@@ -92,6 +79,17 @@ class DataCollector extends Nette\Object
 	public function getSimilarQueriesCount()
 	{
 		return $this->countGroupedQueries($this->getSimilarQueries());
+	}
+
+
+	private function sortQueries()
+	{
+		if ($this->areQueriesLoaded === FALSE) {
+			foreach ($this->loggerDataExtractor->getLoggedQueries() as $query) {
+				$this->queryAnalyzer->addQuery($query);
+			}
+			$this->areQueriesLoaded = TRUE;
+		}
 	}
 
 

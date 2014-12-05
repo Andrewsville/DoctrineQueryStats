@@ -1,17 +1,27 @@
 {
-	"name": "lekarna/doctrine-query-stats",
+	"name": "zenify/doctrine-query-stats",
 	"description": "Easy blame of duplicated queries; port of SensioLabsDoctrineQueryStatisticsBundle to Nette",
 	"license": "MIT",
 	"authors": [
-		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" },
-		{ "name": "Pears Health Cyber, s.r.o.", "homepage": "http://pearshealthcyber.cz" }
+		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" }
 	],
 	"require": {
-		"kdyby/doctrine": "~2.0"
+		"php": ">=5.4",
+		"kdyby/doctrine": "~2.1",
+		"tracy/tracy": "~2.2"
+	},
+	"require-dev": {
+		"nette/bootstrap": "~2.2",
+		"nette/di": "~2.2",
+		"nette/mail": "~2.2",
+		"nette/safe-stream": "~2.2",
+		"nette/tester": "~1.3",
+		"zenify/coding-standard": "~1.0",
+		"jakub-onderka/php-parallel-lint": "~0.8"
 	},
 	"autoload": {
 		"psr-4": {
-			"Lekarna\\DoctrineQueryStats\\": "src/"
+			"Zenify\\DoctrineQueryStats\\": "src/"
 		}
 	}
 }

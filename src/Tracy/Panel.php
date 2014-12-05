@@ -1,20 +1,19 @@
 <?php
 
 /**
- * This file is part of Lekarna
- * Copyright (c) 2014 Pears Health Cyber, s.r.o. (http://pearshealthcyber.cz)
+ * This file is part of Zenify
+ * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Lekarna\DoctrineQueryStats\Tracy;
+namespace Zenify\DoctrineQueryStats\Tracy;
 
-use Lekarna\DoctrineQueryStats\Analytics\DataCollector;
-use Nette;
+use Zenify\DoctrineQueryStats\Analytics\DataCollector;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\Bridges\ApplicationLatte\Template;
 use Tracy\IBarPanel;
 
 
-class Panel extends Nette\Object implements IBarPanel
+class Panel implements IBarPanel
 {
 
 	/**
@@ -36,27 +35,35 @@ class Panel extends Nette\Object implements IBarPanel
 
 
 	/**
-	 * @return string
+	 * @return Template|string
 	 */
 	public function getTab()
 	{
-		$template = new Template($this->latteFactory->create());
-		$template->setFile(__DIR__ . '/templates/tab.latte');
+		return $this->createTemplateWithFile(__DIR__ . '/templates/tab.latte');
+	}
+
+
+	/**
+	 * @return Template|string
+	 */
+	public function getPanel()
+	{
+		$template = $this->createTemplateWithFile(__DIR__ . '/templates/panel.latte');
+		$template->setParameters([
+			'dataCollector' => $this->dataCollector
+		]);
 		return $template;
 	}
 
 
 	/**
-	 * @return string
+	 * @param string $file
+	 * @return Template
 	 */
-	public function getPanel()
+	private function createTemplateWithFile($file)
 	{
-		/** @var Template|\stdClass $template */
 		$template = new Template($this->latteFactory->create());
-		$template->setFile(__DIR__ . '/templates/panel.latte');
-		$template->setParameters([
-			'dataCollector' => $this->dataCollector
-		]);
+		$template->setFile($file);
 		return $template;
 	}
 

@@ -1,7 +1,7 @@
-# Lekarna/DoctrineQueryStats 
+# Zenify/DoctrineQueryStats 
 
-[![Downloads this Month](https://img.shields.io/packagist/dm/lekarna/doctrine-query-stats.svg)](https://packagist.org/packages/lekarna/doctrine-query-stats)
-[![Latest stable](https://img.shields.io/packagist/v/lekarna/doctrine-query-stats.svg)](https://packagist.org/packages/lekarna/doctrine-query-stats)
+[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/doctrine-query-stats.svg)](https://packagist.org/packages/zenify/doctrine-query-stats)
+[![Latest stable](https://img.shields.io/packagist/v/zenify/doctrine-query-stats.svg)](https://packagist.org/packages/zenify/doctrine-query-stats)
 
 Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/SensioLabsDoctrineQueryStatisticsBundle) in Nette.
 
@@ -11,14 +11,14 @@ Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/
 Install latest version via composer:
 
 ```sh
-$ composer require lekarna/doctrine-query-stats
+$ composer require zenify/doctrine-query-stats
 ```
 
 Register extension in `config.neon`:
 
 ```yaml
 extensions:
-	- Lekarna\DoctrineQueryStats\DI\DqsExtension
+	- Zenify\DoctrineQueryStats\DI\DqsExtension
 ```
 
 For duplicate queries now you can see overview in debug bar:

@@ -1,0 +1,5 @@
+services:
+	- Zenify\DoctrineQueryStats\Analytics\DataCollector
+	- Zenify\DoctrineQueryStats\Analytics\QueryAnalyzer
+	- Zenify\DoctrineQueryStats\Analytics\LoggerDataExtractor
+	- Zenify\DoctrineQueryStats\Tracy\Panel

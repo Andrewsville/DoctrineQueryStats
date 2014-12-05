@@ -1,11 +1,11 @@
 <?php
 
 /**
- * This file is part of Lekarna
- * Copyright (c) 2014 Pears Health Cyber, s.r.o. (http://pearshealthcyber.cz)
+ * This file is part of Zenify
+ * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Lekarna\DoctrineQueryStats\Analytics;
+namespace Zenify\DoctrineQueryStats\Analytics;
 
 use Kdyby\Doctrine\Diagnostics\Panel;
 use Nette;

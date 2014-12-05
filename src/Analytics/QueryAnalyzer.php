@@ -1,19 +1,14 @@
 <?php
 
 /**
- * This file is part of Lekarna
- * Copyright (c) 2014 Pears Health Cyber, s.r.o. (http://pearshealthcyber.cz)
+ * This file is part of Zenify
+ * Copyright (c) 2012 Tomas Votruba (http://tomasvotruba.cz)
  */
 
-namespace Lekarna\DoctrineQueryStats\Analytics;
-
-use Nette;
+namespace Zenify\DoctrineQueryStats\Analytics;
 
 
-/**
- * @method Query[] getQueries()
- */
-class QueryAnalyzer extends Nette\Object
+class QueryAnalyzer
 {
 
 	/**
@@ -35,6 +30,15 @@ class QueryAnalyzer extends Nette\Object
 	public function addQuery(Query $query)
 	{
 		$this->queries[] = $query;
+	}
+
+
+	/**
+	 * @return Query[]
+	 */
+	public function getQueries()
+	{
+		return $this->queries;
 	}
 
 
