@@ -13,7 +13,6 @@ use Nette;
 
 /**
  * @method string   getSql()
- * @method array    getParameters()
  * @method int      getSisterQueriesCount()
  * @method array    setSisterQueriesCount()
  */
@@ -81,9 +80,16 @@ class Query extends Nette\Object
 	 */
 	public function getSqlWithParameters()
 	{
-		return Panel::highlightQuery(
-			Panel::formatQuery($this->sql, $this->parameters, $this->types)
-		);
+		return Panel::formatQuery($this->sql, $this->parameters, $this->types);
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getSqlWithParametersHighlighted()
+	{
+		return Panel::highlightQuery($this->getSqlWithParameters());
 	}
 
 }

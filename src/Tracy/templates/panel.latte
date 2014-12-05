@@ -27,7 +27,7 @@
 	        <tr>
 	            <td>{$query->getSisterQueriesCount()}</td>
 	            <td class="nette-Doctrine2Panel-sql">
-	                {$query->getSqlWithParameters()|noescape}
+	                {$query->getSqlWithParametersHighlighted()|noescape}
                 </td>
 	        </tr>
 		{/}

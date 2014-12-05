@@ -21,11 +21,6 @@ class DataCollector
 	 */
 	private $queryAnalyzer;
 
-	/**
-	 * @var bool
-	 */
-	private $areQueriesLoaded = FALSE;
-
 
 	public function __construct(LoggerDataExtractor $loggerDataExtractor, QueryAnalyzer $queryAnalyzer)
 	{
@@ -84,11 +79,8 @@ class DataCollector
 
 	private function sortQueries()
 	{
-		if ($this->areQueriesLoaded === FALSE) {
-			foreach ($this->loggerDataExtractor->getLoggedQueries() as $query) {
-				$this->queryAnalyzer->addQuery($query);
-			}
-			$this->areQueriesLoaded = TRUE;
+		foreach ($this->loggerDataExtractor->getLoggedQueries() as $query) {
+			$this->queryAnalyzer->addQuery($query);
 		}
 	}
 

@@ -25,10 +25,6 @@ class DqsExtension extends CompilerExtension
 	public function afterCompile(ClassType $class)
 	{
 		$initialize = $class->getMethods()['initialize'];
-//		$initialize->addBody(
-//			'Tracy\Debugger::getBar()->addPanel($this->getByType(?)->create());',
-//			['Zenify\DoctrineQueryStats\Tracy\PanelFactory']
-//		);
 		$initialize->addBody(
 			'Tracy\Debugger::getBar()->addPanel($this->getByType(?));',
 			['Zenify\DoctrineQueryStats\Tracy\Panel']

@@ -1,12 +1,12 @@
 {
 	"name": "zenify/doctrine-query-stats",
-	"description": "Easy blame of duplicated queries; port of SensioLabsDoctrineQueryStatisticsBundle to Nette",
+	"description": "Easy blame of duplicated Doctrine queries for Nette",
 	"license": "MIT",
 	"authors": [
 		{ "name": "Tomáš Votruba", "homepage": "http://tomasvotruba.cz" }
 	],
 	"require": {
-		"php": ">=5.4",
+		"php": ">=5.5",
 		"kdyby/doctrine": "~2.1",
 		"tracy/tracy": "~2.2"
 	},

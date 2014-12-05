@@ -14,7 +14,7 @@ class QueryAnalyzer
 	/**
 	 * @var Query[]
 	 */
-	private $queries = [];
+	private $queries;
 
 	/**
 	 * @var Query[]
