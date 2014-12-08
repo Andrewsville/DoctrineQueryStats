@@ -18,7 +18,7 @@ script:
   - vendor/bin/tester -c tests/php.ini-unix tests -s
   # php code sniffer
   - vendor/bin/phpcs src --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/ruleset.xml
-  - vendor/bin/phpcs tests/ZenifyTests/DoctrineBehaviors --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/ruleset.xml
+  - vendor/bin/phpcs tests/ZenifyTests/DoctrineQueryStats --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/ruleset.xml
   # code coverage
   - vendor/bin/tester tests/ZenifyTests -c tests/php.ini-unix-coverage --coverage coverage.clover --coverage-src src
 
