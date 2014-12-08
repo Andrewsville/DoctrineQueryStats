@@ -1,7 +1,9 @@
 # Zenify/DoctrineQueryStats 
 
-[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/doctrine-query-stats.svg)](https://packagist.org/packages/zenify/doctrine-query-stats)
-[![Latest stable](https://img.shields.io/packagist/v/zenify/doctrine-query-stats.svg)](https://packagist.org/packages/zenify/doctrine-query-stats)
+[![Build Status](https://img.shields.io/travis/Zenify/DoctrineQueryStats.svg?style=flat-square)](https://travis-ci.org/Zenify/DoctrineQueryStats)
+[![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/DoctrineQueryStats.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/DoctrineQueryStats)
+[![Downloads this Month](https://img.shields.io/packagist/dm/zenify/doctrine-query-stats.svg?style=flat-square)](https://packagist.org/packages/zenify/doctrine-query-stats)
+[![Latest stable](https://img.shields.io/packagist/v/zenify/doctrine-query-stats.svg?style=flat-square)](https://packagist.org/packages/zenify/doctrine-query-stats)
 
 Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/SensioLabsDoctrineQueryStatisticsBundle) in Nette.
 
