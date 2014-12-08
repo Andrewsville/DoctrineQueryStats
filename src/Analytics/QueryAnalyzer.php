@@ -82,8 +82,9 @@ class QueryAnalyzer
 	{
 		$indistinctQueries = [];
 		foreach ($allQueries as $queryKey => $queries) {
-			if (count($queries) > 1) {
-				$queries[0]->setSisterQueriesCount(count($queries));
+			$queryCount = count($queries);
+			if ($queryCount > 1) {
+				$queries[0]->setSisterQueriesCount($queryCount);
 				$indistinctQueries[$queryKey] = $queries[0];
 			}
 		}
