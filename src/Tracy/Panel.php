@@ -7,10 +7,10 @@
 
 namespace Zenify\DoctrineQueryStats\Tracy;
 
-use Zenify\DoctrineQueryStats\Analytics\DataCollector;
 use Nette\Bridges\ApplicationLatte\ILatteFactory;
 use Nette\Bridges\ApplicationLatte\Template;
 use Tracy\IBarPanel;
+use Zenify\DoctrineQueryStats\Analytics\DataCollector;
 
 
 class Panel implements IBarPanel
