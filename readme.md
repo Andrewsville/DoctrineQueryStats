@@ -13,7 +13,7 @@ Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/
 Install latest version via composer:
 
 ```sh
-$ composer require zenify/doctrine-query-stats
+$ composer require zenify/doctrine-query-stats --dev
 ```
 
 Register extension in `config.neon`:
