@@ -21,7 +21,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
 
 	protected function setUp()
 	{
-		$this->container = (new ContainerFactory())->create();
+		$this->container = (new ContainerFactory)->create();
 	}
 
 

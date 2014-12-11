@@ -20,7 +20,7 @@ class LoggerDataExtractorTest extends PHPUnit_Framework_TestCase
 
 	protected function setUp()
 	{
-		$container = (new ContainerFactory())->create();
+		$container = (new ContainerFactory)->create();
 		$this->loggerDataExtractor = $container->getByType(LoggerDataExtractor::class);
 
 		/** @var DatabaseLoader  $databaseLoader */

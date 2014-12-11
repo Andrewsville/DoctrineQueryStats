@@ -28,7 +28,7 @@ class DataCollectorSimilarQueriesTest extends PHPUnit_Framework_TestCase
 
 	protected function setUp()
 	{
-		$container = (new ContainerFactory())->create();
+		$container = (new ContainerFactory)->create();
 
 		/** @var EntityManager $entityManager */
 		$entityManager = $container->getByType(EntityManager::class);

@@ -21,7 +21,7 @@ class PanelTest extends PHPUnit_Framework_TestCase
 
 	protected function setUp()
 	{
-		$container = (new ContainerFactory())->create();
+		$container = (new ContainerFactory)->create();
 		$this->panel = $container->getByType(Panel::class);
 	}
 
