@@ -23,7 +23,7 @@ before_script:
   # php code sniffer
   - vendor/bin/phpcs src tests/ZenifyTests --standard=vendor/zenify/coding-standard/src/ZenifyCodingStandard/code-sniffer-ruleset.xml --ignore=bootstrap
   # php mess-detector
-  - vendor/bin/phpmd src,tests text src/ZenifyCodingStandard/mess-detector-ruleset.xml
+  - vendor/bin/phpmd src,tests text vendor/zenify/coding-standard/src/ZenifyCodingStandard/mess-detector-ruleset.xml
 
 script:
   - vendor/bin/phpunit
