@@ -2,20 +2,11 @@
 
 namespace ZenifyTests\DoctrineQueryStats;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityRepository;
-use Nette\DI\Container;
-use Tester\Assert;
-use Tester\TestCase;
-use Zenify\DoctrineQueryStats\Analytics\DataCollector;
+use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\Query;
 
 
-require_once __DIR__ . '/../../bootstrap.php';
-
-
-class QueryTest extends TestCase
+class QueryTest extends PHPUnit_Framework_TestCase
 {
 
 	const SQL = 'SELECT * FROM product WHERE id = ?';
@@ -35,13 +26,13 @@ class QueryTest extends TestCase
 
 	public function testSql()
 	{
-		Assert::same(self::SQL, $this->query->getSql());
+		$this->assertSame(self::SQL, $this->query->getSql());
 	}
 
 
 	public function testSqlWithParameters()
 	{
-		Assert::same(
+		$this->assertSame(
 			'SELECT * FROM product WHERE id = 25',
 			$this->query->getSqlWithParameters()
 		);
@@ -50,13 +41,13 @@ class QueryTest extends TestCase
 
 	public function testSqlHash()
 	{
-		Assert::same(sha1(self::SQL), $this->query->getSqlHash());
+		$this->assertSame(sha1(self::SQL), $this->query->getSqlHash());
 	}
 
 
 	public function testSqlAndParametersHash()
 	{
-		Assert::same(
+		$this->assertSame(
 			sha1(self::SQL) . ':' . sha1(serialize([self::PARAMETER])),
 			$this->query->getSqlAndParametersHash()
 		);
@@ -65,13 +56,10 @@ class QueryTest extends TestCase
 
 	public function testSqlWithParametersHighlighted()
 	{
-		Assert::contains(
+		$this->assertContains(
 			'<pre class="dump"><strong style="color:blue">SELECT</strong> *',
 			$this->query->getSqlWithParametersHighlighted()
 		);
 	}
 
 }
-
-
-(new QueryTest)->run();

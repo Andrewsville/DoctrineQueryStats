@@ -1,3 +1,6 @@
+services:
+	- ZenifyTests\DatabaseLoader
+
 extensions:
 	- Kdyby\Console\DI\ConsoleExtension
 	- Kdyby\Events\DI\EventsExtension
