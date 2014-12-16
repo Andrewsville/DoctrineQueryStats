@@ -26,7 +26,7 @@ before_script:
   - vendor/bin/phpmd src,tests text vendor/zenify/coding-standard/src/ZenifyCodingStandard/mess-detector-ruleset.xml
 
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit --coverage-clover=coverage.clover
 
 after_script:
   # move code coverage
