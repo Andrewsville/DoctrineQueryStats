@@ -9,7 +9,7 @@
     verbose="true"
 >
     <testsuites>
-        <testsuite name="Sniff tests">
+        <testsuite>
             <directory>tests</directory>
         </testsuite>
     </testsuites>

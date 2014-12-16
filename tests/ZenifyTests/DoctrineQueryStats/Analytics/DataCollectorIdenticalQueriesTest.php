@@ -2,15 +2,12 @@
 
 namespace ZenifyTests\DoctrineQueryStats;
 
-use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use Nette\DI\Container;
+use Nette\DI\ContainerFactory;
 use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\DataCollector;
 use Zenify\DoctrineQueryStats\Analytics\Query;
-use ZenifyTests\ContainerFactory;
-use ZenifyTests\DatabaseLoader;
 use ZenifyTests\DoctrineQueryStats\Entities\Product;
 
 
