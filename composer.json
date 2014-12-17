@@ -21,7 +21,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Zenify\\DoctrineQueryStats\\": "src/"
+			"Zenify\\DoctrineQueryStats\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Zenify\\DoctrineQueryStats\\Tests\\": "tests"
 		}
 	}
 }
