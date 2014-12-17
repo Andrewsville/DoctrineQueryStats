@@ -11,7 +11,7 @@ Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/
 
 ## Usage
 
-Install latest version via composer:
+Install the latest version via composer:
 
 ```sh
 $ composer require zenify/doctrine-query-stats --dev
