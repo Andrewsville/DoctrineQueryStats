@@ -1,13 +1,14 @@
 <?php
 
-namespace ZenifyTests\DoctrineQueryStats\Tracy;
+namespace Zenify\DoctrineQueryStats\Tests\Tracy;
 
 use Nette;
 use Nette\Bridges\ApplicationLatte\Template;
+use Nette\DI\Container;
 use PHPUnit_Framework_TestCase;
 use Tracy\IBarPanel;
+use Zenify\DoctrineQueryStats\Tests\ContainerFactory;
 use Zenify\DoctrineQueryStats\Tracy\Panel;
-use ZenifyTests\ContainerFactory;
 
 
 class PanelTest extends PHPUnit_Framework_TestCase
@@ -18,11 +19,21 @@ class PanelTest extends PHPUnit_Framework_TestCase
 	 */
 	private $panel;
 
+	/**
+	 * @var Container
+	 */
+	private $container;
+
+
+	public function __construct()
+	{
+		$this->container = (new ContainerFactory)->create();
+	}
+
 
 	protected function setUp()
 	{
-		$container = (new ContainerFactory)->create();
-		$this->panel = $container->getByType(Panel::class);
+		$this->panel = $this->container->getByType(Panel::class);
 	}
 
 

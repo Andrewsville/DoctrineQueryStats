@@ -1,13 +1,13 @@
 <?php
 
-namespace ZenifyTests\DoctrineQueryStats;
+namespace Zenify\DoctrineQueryStats\Tests\DI;
 
 use Nette;
 use Nette\DI\Container;
 use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\DataCollector;
+use Zenify\DoctrineQueryStats\Tests\ContainerFactory;
 use Zenify\DoctrineQueryStats\Tracy\Panel;
-use ZenifyTests\ContainerFactory;
 
 
 class ExtensionTest extends PHPUnit_Framework_TestCase
@@ -19,7 +19,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
 	private $container;
 
 
-	protected function setUp()
+	public function __construct()
 	{
 		$this->container = (new ContainerFactory)->create();
 	}

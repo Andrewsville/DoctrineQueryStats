@@ -1,6 +1,6 @@
 <?php
 
-namespace ZenifyTests\DoctrineQueryStats;
+namespace Zenify\DoctrineQueryStats\Tests\Analytics;
 
 use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\Query;

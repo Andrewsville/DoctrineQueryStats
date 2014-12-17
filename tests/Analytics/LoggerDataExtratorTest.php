@@ -1,16 +1,22 @@
 <?php
 
-namespace ZenifyTests\DoctrineQueryStats;
+namespace Zenify\DoctrineQueryStats\Tests\Analytics;
 
+use Nette\DI\Container;
 use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\LoggerDataExtractor;
 use Zenify\DoctrineQueryStats\Analytics\Query;
-use ZenifyTests\ContainerFactory;
-use ZenifyTests\DatabaseLoader;
+use Zenify\DoctrineQueryStats\Tests\ContainerFactory;
+use Zenify\DoctrineQueryStats\Tests\DatabaseLoader;
 
 
 class LoggerDataExtractorTest extends PHPUnit_Framework_TestCase
 {
+
+	/**
+	 * @var Container
+	 */
+	private $container;
 
 	/**
 	 * @var LoggerDataExtractor
@@ -18,13 +24,18 @@ class LoggerDataExtractorTest extends PHPUnit_Framework_TestCase
 	private $loggerDataExtractor;
 
 
+	public function __construct()
+	{
+		$this->container = (new ContainerFactory)->create();
+	}
+
+
 	protected function setUp()
 	{
-		$container = (new ContainerFactory)->create();
-		$this->loggerDataExtractor = $container->getByType(LoggerDataExtractor::class);
+		$this->loggerDataExtractor = $this->container->getByType(LoggerDataExtractor::class);
 
-		/** @var DatabaseLoader  $databaseLoader */
-		$databaseLoader = $container->getByType(DatabaseLoader::class);
+		/** @var DatabaseLoader $databaseLoader */
+		$databaseLoader = $this->container->getByType(DatabaseLoader::class);
 		$databaseLoader->prepareProductTable();
 	}
 

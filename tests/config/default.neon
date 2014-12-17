@@ -1,5 +1,6 @@
 services:
-	- ZenifyTests\DatabaseLoader
+	- Zenify\DoctrineQueryStats\Tests\DatabaseLoader
+
 
 extensions:
 	- Kdyby\Console\DI\ConsoleExtension
@@ -11,5 +12,5 @@ extensions:
 
 doctrine:
 	driver: pdo_sqlite
-	memory: TRUE
-	logging: TRUE
+	memory: true
+	logging: true

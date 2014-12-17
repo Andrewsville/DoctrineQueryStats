@@ -1,18 +1,25 @@
 <?php
 
-namespace ZenifyTests\DoctrineQueryStats;
+namespace Zenify\DoctrineQueryStats\Tests\Analytics;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use Nette\DI\ContainerFactory;
+use Nette\DI\Container;
 use PHPUnit_Framework_TestCase;
 use Zenify\DoctrineQueryStats\Analytics\DataCollector;
 use Zenify\DoctrineQueryStats\Analytics\Query;
-use ZenifyTests\DoctrineQueryStats\Entities\Product;
+use Zenify\DoctrineQueryStats\Tests\ContainerFactory;
+use Zenify\DoctrineQueryStats\Tests\DatabaseLoader;
+use Zenify\DoctrineQueryStats\Tests\Entities\Product;
 
 
 class DataCollectorIdenticalQueriesTest extends PHPUnit_Framework_TestCase
 {
+
+	/**
+	 * @var Container
+	 */
+	private $container;
 
 	/**
 	 * @var DataCollector
@@ -25,17 +32,21 @@ class DataCollectorIdenticalQueriesTest extends PHPUnit_Framework_TestCase
 	private $productRepository;
 
 
+	public function __construct()
+	{
+		$this->container = (new ContainerFactory)->create();
+	}
+
+
 	protected function setUp()
 	{
-		$container = (new ContainerFactory)->create();
-
 		/** @var EntityManager $entityManager */
-		$entityManager = $container->getByType(EntityManager::class);
+		$entityManager = $this->container->getByType(EntityManager::class);
 		$this->productRepository = $entityManager->getRepository(Product::class);
-		$this->dataCollector = $container->getByType(DataCollector::class);
+		$this->dataCollector = $this->container->getByType(DataCollector::class);
 
-		/** @var DatabaseLoader  $databaseLoader */
-		$databaseLoader = $container->getByType(DatabaseLoader::class);
+		/** @var DatabaseLoader $databaseLoader */
+		$databaseLoader = $this->container->getByType(DatabaseLoader::class);
 		$databaseLoader->prepareProductTable();
 	}
 
