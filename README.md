@@ -1,4 +1,4 @@
-# Zenify/DoctrineQueryStats 
+# Doctrine Query Stats 
 
 [![Build Status](https://img.shields.io/travis/Zenify/DoctrineQueryStats.svg?style=flat-square)](https://travis-ci.org/Zenify/DoctrineQueryStats)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Zenify/DoctrineQueryStats.svg?style=flat-square)](https://scrutinizer-ci.com/g/Zenify/DoctrineQueryStats)
@@ -9,9 +9,9 @@
 Implementation of [DoctrineQueryStatisticsBundle](https://github.com/sensiolabs/SensioLabsDoctrineQueryStatisticsBundle) in Nette.
 
 
-## Usage
+## Install
 
-Install the latest version via composer:
+Via Composer:
 
 ```sh
 $ composer require zenify/doctrine-query-stats --dev
@@ -23,6 +23,9 @@ Register extension in `config.neon`:
 extensions:
 	- Zenify\DoctrineQueryStats\DI\DqsExtension
 ```
+
+
+## Usage
 
 For duplicate queries now you can see overview in debug bar:
 	
