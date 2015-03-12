@@ -9,6 +9,8 @@ namespace Zenify\DoctrineQueryStats\DI;
 
 use Nette\DI\CompilerExtension;
 use Nette\PhpGenerator\ClassType;
+use Tracy\Debugger;
+use Zenify\DoctrineQueryStats\Tracy\Panel;
 
 
 class DqsExtension extends CompilerExtension
@@ -26,8 +28,8 @@ class DqsExtension extends CompilerExtension
 	{
 		$initialize = $class->getMethods()['initialize'];
 		$initialize->addBody(
-			'Tracy\Debugger::getBar()->addPanel($this->getByType(?));',
-			['Zenify\DoctrineQueryStats\Tracy\Panel']
+			Debugger::class . '::getBar()->addPanel($this->getByType(?));',
+			[Panel::class]
 		);
 	}
 

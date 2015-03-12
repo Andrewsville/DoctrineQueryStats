@@ -12,5 +12,5 @@ extensions:
 
 doctrine:
 	driver: pdo_sqlite
-	memory: true
-	logging: true
+	memory: TRUE
+	logging: TRUE

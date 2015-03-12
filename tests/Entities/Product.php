@@ -3,17 +3,12 @@
 namespace Zenify\DoctrineQueryStats\Tests\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
-use Nette;
 
 
 /**
  * @ORM\Entity
- *
- * @method  int     getId()
- * @method  string  getName()
- * @method  Product setName()
  */
-class Product extends Nette\Object
+class Product
 {
 
 	/**
@@ -21,12 +16,39 @@ class Product extends Nette\Object
 	 * @ORM\Id
 	 * @ORM\GeneratedValue
 	 */
-	public $id;
+	private $id;
 
 	/**
 	 * @ORM\Column(type="string", nullable=TRUE)
 	 * @var string
 	 */
-	protected $name;
+	private $name;
+
+
+	/**
+	 * @param string $name
+	 */
+	public function __construct($name)
+	{
+		$this->name = $name;
+	}
+
+
+	/**
+	 * @return mixed
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+
+	/**
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
 
 }
