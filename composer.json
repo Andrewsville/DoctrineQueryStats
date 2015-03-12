@@ -8,6 +8,7 @@
 	"require": {
 		"php": ">=5.5",
 		"kdyby/doctrine": "~2.1",
+		"latte/latte": "~2.2",
 		"nette/di": "~2.2",
 		"tracy/tracy": "~2.2"
 	},
