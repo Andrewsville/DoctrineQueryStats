@@ -68,9 +68,9 @@ class QueryAnalyzer
 			foreach ($this->queries as $query) {
 				$groupedQueries[$query->getSqlHash()][] = $query;
 			}
-			$this->identicalQueries = $this->filterIndistinctQueries($groupedQueries);
+			$this->similarQueries = $this->filterIndistinctQueries($groupedQueries);
 		}
-		return $this->identicalQueries;
+		return $this->similarQueries;
 	}
 
 
